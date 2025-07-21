@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -73,12 +72,12 @@
         .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
         .nav-logo { display: flex; align-items: center; text-decoration: none; gap: 12px; }
         .nav-logo img { height: 40px; } .nav-logo span { font-size: 1.2em; font-weight: 700; color: var(--secondary-color); }
-        .nav-links { list-style: none; display: none; gap: 25px; margin: 0; padding: 0;}
-        @media (min-width: 992px) { .nav-links { display: flex; } }
+        .nav-links { list-style: none; display: flex; gap: 25px; margin: 0; padding: 0;}
         .nav-links a { text-decoration: none; color: var(--secondary-color); font-weight: 500; transition: color 0.3s; position: relative; padding: 5px 0; font-size: 0.95em; }
         .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: var(--primary-color); transition: width 0.3s; }
         .nav-links a:hover::after, .nav-links a.active-link::after { width: 100%; }
         .nav-links a:hover, .nav-links a.active-link { color: var(--primary-color); font-weight: 700; }
+        .nav-toggle { display: none; }
         .btn, .btn-register { position: relative; overflow: hidden; display: inline-block; background-color: var(--accent-color); color: var(--light-text-color); padding: 14px 32px; font-size: 1em; font-weight: 700; text-decoration: none; border-radius: 50px; transition: all 0.3s; text-transform: uppercase; box-shadow: 0 4px 15px rgba(255, 109, 0, 0.3); border: none; cursor: pointer; z-index: 1; }
         .btn:hover, .btn-register:hover { background-color: #e65100; transform: translateY(-3px); box-shadow: 0 6px 20px rgba(255, 109, 0, 0.4); }
         .btn::before { content: ''; position: absolute; top: 50%; left: 50%; width: 0; height: 0; background-color: rgba(255,255,255,0.2); border-radius: 50%; transform: translate(-50%, -50%); transition: width 0.4s, height 0.4s; z-index: -1; }
@@ -88,9 +87,7 @@
         .hero p { font-size: 1.15em; margin-bottom: 25px; max-width: 750px; margin-left: auto; margin-right: auto; font-weight: 400; opacity: 0.9; }
         #clients { padding: 40px 0; background-color: #fff; }
         .clients-title { text-align: center; color: #7f8c9b; font-weight: 700; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9em;}
-        .client-logo-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; align-items: center; }
-        @media (min-width: 576px) { .client-logo-grid { grid-template-columns: repeat(3, 1fr); } }
-        @media (min-width: 992px) { .client-logo-grid { grid-template-columns: repeat(5, 1fr); gap: 40px; } }
+        .client-logo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 30px; align-items: center; }
         .client-logo-grid img { max-height: 35px; width: auto; margin: 0 auto; filter: grayscale(100%); opacity: 0.6; transition: all 0.3s; }
         .client-logo-grid img:hover { filter: grayscale(0%); opacity: 1; transform: scale(1.1); }
         
@@ -118,16 +115,6 @@
         .pricing-features li.disabled { color: #9ca3af; } .pricing-features li.disabled svg { color: #d1d5db; }
         .pricing-card .btn { width: 100%; box-sizing: border-box; }
 
-        @media (max-width: 768px) {
-            .pricing-tabs { display: flex; justify-content: center; gap: 5px; margin-bottom: 25px; background-color: var(--light-bg-color); border-radius: 50px; padding: 5px; }
-            .pricing-tab-btn { flex: 1; padding: 10px 15px; font-size: 0.9em; font-weight: 700; border: none; background-color: transparent; color: var(--text-color); border-radius: 50px; cursor: pointer; transition: all 0.3s; }
-            .pricing-tab-btn.active { background-color: var(--primary-color); color: #fff; box-shadow: 0 4px 10px rgba(10,104,255,0.3); }
-            .pricing-grid { display: block; }
-            .pricing-card { display: none; margin-bottom: 0; }
-            .pricing-card.active { display: flex; animation: fadeIn 0.5s; }
-            .pricing-card.recommended { transform: none; }
-        }
-
         #faq { background-color: var(--light-bg-color); }
         .faq-container { max-width: 800px; margin: 0 auto; }
         .faq-item { background-color: #fff; margin-bottom: 15px; border-radius: 12px; border: 1px solid var(--border-color); overflow: hidden; transition: all 0.3s ease; }
@@ -135,15 +122,15 @@
         .faq-question { display: flex; justify-content: space-between; align-items: center; width: 100%; text-align: left; padding: 20px; font-size: 1.1em; font-weight: 700; color: var(--secondary-color); cursor: pointer; background: none; border: none; list-style: none; }
         .faq-question::-webkit-details-marker { display: none; }
         .faq-question:hover { color: var(--primary-color); }
-        .faq-icon { transition: transform 0.3s ease; flex-shrink: 0; margin-left: 15px; }
-        .faq-item[open] .faq-icon { transform: rotate(45deg); }
+        .faq-icon { transition: transform 0.3s ease; flex-shrink: 0; margin-left: 15px; color: var(--primary-color); }
+        .faq-item[open] .faq-icon { transform: rotate(180deg); }
         .faq-answer { padding: 0 20px 20px; color: var(--text-color); line-height: 1.7; animation: fadeInAnswer 0.4s ease; }
         @keyframes fadeInAnswer { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
 
         #cta-section { background: var(--secondary-color); color: #fff; padding: 60px 0; text-align: center; } #cta-section h2 { font-size: 2.5em; font-weight: 800; } #cta-section p { font-size: 1.1em; max-width: 600px; margin: 15px auto 30px; opacity: 0.8; }
         footer { background-color: var(--secondary-color); color: #bdc1c6; padding: 50px 0 30px; } 
         .footer-grid { display: grid; grid-template-columns: 1fr; gap: 40px; text-align: left; padding-bottom: 40px; } 
-        @media(min-width: 992px){ .footer-grid { grid-template-columns: repeat(3, 1fr); } }
+        @media(min-width: 768px){ .footer-grid { grid-template-columns: repeat(3, 1fr); } }
         .footer-col h4 { font-size: 1.1em; color: #fff; margin-bottom: 15px; font-weight: 700; } .footer-col, .footer-col p, .footer-col a { font-size: 0.95em; } .footer-col a { color: #bdc1c6; text-decoration: none; transition: color 0.3s; } .footer-col a:hover { color: var(--primary-color); } .footer-logo img { max-width: 200px; height: auto; border-radius: 8px; margin-bottom: 15px; } .social-icons { display: flex; gap: 15px; margin-top: 15px; } .social-icons a { width: 40px; height: 40px; background-color: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s;} .social-icons img, .social-icons svg { width: 20px; height: 20px; fill: #fff; } .social-icons a:hover { background-color: var(--primary-color); transform: scale(1.1); }
         .copyright { text-align: center; padding-top: 20px; border-top: 1px solid #5f6368; font-size: 0.9em; }
         
@@ -161,8 +148,88 @@
         #slider-container { max-width: 900px; margin: 30px auto 0; position: relative; border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--box-shadow); } .slider-wrapper { display: flex; transition: transform 0.5s ease-in-out; } .slide { flex: 0 0 100%; position: relative;} .slide img { width: 100%; border-radius: var(--border-radius); display: block; aspect-ratio: 16/9; object-fit: cover;} .slide-caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); color: white; padding: 40px 20px 20px; text-align: center; } .slide-caption h4 { margin: 0 0 5px; font-size: 1.2em; } .slide-caption p { margin: 0; font-size: 0.9em; opacity: 0.9; }
         .slider-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 100%; display: flex; justify-content: space-between; padding: 0 10px; box-sizing: border-box; } .slider-nav button { background-color: rgba(0,0,0,0.5); color: white; border: none; padding: 10px; font-size: 24px; cursor: pointer; border-radius: 50%; width: 44px; height: 44px; transition: background-color 0.3s; } .slider-nav button:hover { background-color: rgba(0,0,0,0.8); } .slider-dots { text-align: center; margin-top: 15px; } .dot { display: inline-block; width: 10px; height: 10px; background-color: var(--border-color); border-radius: 50%; margin: 0 5px; cursor: pointer; transition: background-color 0.3s; } .dot.active { background-color: var(--primary-color); }
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(13, 27, 42, 0.7); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); display: flex; align-items: center; justify-content: center; z-index: 1001; opacity: 0; visibility: hidden; transition: opacity 0.4s, visibility 0.4s; } .modal-overlay.active { opacity: 1; visibility: visible; } .modal-content { background: #fff; padding: 40px; border-radius: var(--border-radius); width: 90%; max-width: 500px; position: relative; transform: translateY(-20px) scale(0.95); transition: transform 0.4s; } .modal-overlay.active .modal-content { transform: translateY(0) scale(1); } .modal-close { position: absolute; top: 15px; right: 15px; font-size: 2em; font-weight: bold; color: #aaa; cursor: pointer; line-height: 1; border: none; background: none; } .modal-close:hover { color: #333; } .modal-content h3 { text-align: center; font-size: 1.8em; color: var(--secondary-color); margin-bottom: 25px; } .form-group { margin-bottom: 20px; } .form-group label { display: block; font-weight: 500; margin-bottom: 8px; color: #5f6368; } .form-group input, .form-group textarea { width: 100%; padding: 12px 15px; border-radius: 8px; border: 1px solid var(--border-color); font-size: 1em; font-family: 'Be Vietnam Pro', sans-serif; transition: border-color 0.3s, box-shadow 0.3s; box-sizing: border-box; } .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--primary-color); box-shadow: 0 0 0 3px rgba(10, 104, 255, 0.2); } #form-message { color: #16a34a; text-align: center; margin-top:15px; display: none; }
-        @media (max-width: 991px) { .nav-links { display: none; } }
-        @media (max-width: 768px) { .section-title, #cta-section h2 { font-size: 2.2em; } .hero h1 { font-size: 2.5em; } .hero p { font-size: 1.1em; } }
+        
+        /* === START: CSS TỐI ƯU CHO MOBILE === */
+        @media (max-width: 991px) {
+            .nav-toggle {
+                display: block;
+                cursor: pointer;
+                color: var(--secondary-color);
+                z-index: 1001;
+                font-size: 1.5rem;
+            }
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                max-width: 320px;
+                height: 100%;
+                background-color: #fff;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 30px;
+                padding: 2rem;
+                box-shadow: -5px 0 15px rgba(13, 27, 42, 0.1);
+                transition: right 0.4s ease-in-out;
+                z-index: 1000;
+                display: flex; 
+            }
+            .nav-links.show-menu {
+                right: 0;
+            }
+            .nav-links a {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .section-title, #cta-section h2 { font-size: 2.2em; } 
+            .hero h1 { font-size: 2.5em; } 
+            .hero p { font-size: 1.1em; }
+            .pricing-tabs { display: flex; justify-content: center; gap: 5px; margin-bottom: 25px; background-color: var(--light-bg-color); border-radius: 50px; padding: 5px; }
+            .pricing-tab-btn { flex: 1; padding: 10px 15px; font-size: 0.9em; font-weight: 700; border: none; background-color: transparent; color: var(--text-color); border-radius: 50px; cursor: pointer; transition: all 0.3s; }
+            .pricing-tab-btn.active { background-color: var(--primary-color); color: #fff; box-shadow: 0 4px 10px rgba(10,104,255,0.3); }
+            .pricing-grid { display: block; }
+            .pricing-card { display: none; margin-bottom: 0; }
+            .pricing-card.active { display: flex; animation: fadeIn 0.5s; }
+            .pricing-card.recommended { transform: none; }
+            
+            /* 2 & 3. Thách thức, Giải pháp, Tính năng: 2 cột */
+            .problem-grid, .solution-grid, .feature-list {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            .problem-card, .solution-card, .feature-list li { padding: 15px; }
+            .problem-card h4, .solution-card h3 { font-size: 1em; }
+            .problem-card p, .solution-card p, .feature-list li { font-size: 0.9em; }
+            
+            /* 4 & 5. Testimonial & Expert sliders */
+            .testimonial-grid, .experts-grid {
+                display: flex;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                gap: 20px;
+                padding-bottom: 15px;
+            }
+            .testimonial-grid::-webkit-scrollbar, .experts-grid::-webkit-scrollbar { display: none; }
+            .testimonial-card, .expert-card {
+                flex: 0 0 90%;
+                scroll-snap-align: center;
+                transform: none !important;
+            }
+            .expert-card { max-width: 280px; }
+        }
+
+        @media (max-width: 500px) {
+             /* Fallback to 1 column on very small screens */
+            .problem-grid, .solution-grid, .feature-list {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* === END: CSS TỐI ƯU CHO MOBILE === */
     </style>
 </head>
 <body>
@@ -181,7 +248,11 @@
                 <li><a href="#experts">Chuyên gia</a></li> 
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="#footer-contact">Liên hệ</a></li> 
-            </ul> 
+            </ul>
+            <!-- Nút Hamburger Menu -->
+            <div class="nav-toggle" id="nav-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M3 4H21V6H3V4ZM3 11H21V13H3V11ZM3 18H21V20H3V18Z"></path></svg>
+            </div>
         </div> 
     </nav>
 
@@ -264,7 +335,7 @@
                         <summary class="faq-question">
                             <span>Innoflex có phù hợp với doanh nghiệp nhỏ không?</span>
                             <span class="faq-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                             </span>
                         </summary>
                         <div class="faq-answer">
@@ -275,7 +346,7 @@
                         <summary class="faq-question">
                             <span>Phần mềm tích hợp với những sàn TMĐT nào?</span>
                              <span class="faq-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                             </span>
                         </summary>
                         <div class="faq-answer">
@@ -286,7 +357,7 @@
                         <summary class="faq-question">
                             <span>Thời gian triển khai hệ thống mất bao lâu?</span>
                              <span class="faq-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                             </span>
                         </summary>
                         <div class="faq-answer">
@@ -297,7 +368,7 @@
                         <summary class="faq-question">
                             <span>Dữ liệu của chúng tôi có được bảo mật không?</span>
                              <span class="faq-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                             </span>
                         </summary>
                         <div class="faq-answer">
@@ -456,6 +527,28 @@
                     backToTopBtn.style.display = "none";
                 }
             };
+
+            // === START: JAVASCRIPT TỐI ƯU CHO MOBILE ===
+            // 1. Mobile Menu Toggle
+            const navToggle = document.getElementById('nav-toggle');
+            const navMenu = document.querySelector('.nav-links');
+            const navLinkItems = document.querySelectorAll('.nav-links a');
+
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', () => {
+                    navMenu.classList.toggle('show-menu');
+                });
+            }
+
+            // Close menu when a link is clicked
+            navLinkItems.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navMenu.classList.contains('show-menu')) {
+                        navMenu.classList.remove('show-menu');
+                    }
+                });
+            });
+            // === END: JAVASCRIPT TỐI ƯU CHO MOBILE ===
         });
     </script>
 </body>
