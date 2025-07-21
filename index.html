@@ -80,8 +80,6 @@
         .nav-toggle { display: none; }
         .btn, .btn-register { position: relative; overflow: hidden; display: inline-block; background-color: var(--accent-color); color: var(--light-text-color); padding: 14px 32px; font-size: 1em; font-weight: 700; text-decoration: none; border-radius: 50px; transition: all 0.3s; text-transform: uppercase; box-shadow: 0 4px 15px rgba(255, 109, 0, 0.3); border: none; cursor: pointer; z-index: 1; }
         .btn:hover, .btn-register:hover { background-color: #e65100; transform: translateY(-3px); box-shadow: 0 6px 20px rgba(255, 109, 0, 0.4); }
-        .btn::before { content: ''; position: absolute; top: 50%; left: 50%; width: 0; height: 0; background-color: rgba(255,255,255,0.2); border-radius: 50%; transform: translate(-50%, -50%); transition: width 0.4s, height 0.4s; z-index: -1; }
-        .btn:hover::before { width: 200px; height: 200px; }
         .hero { color: var(--light-text-color); padding: 80px 0; text-align: center; background-color: var(--secondary-color); background-image: radial-gradient(circle at top right, var(--primary-color) -60%, transparent 40%); }
         .hero h1 { font-size: 3em; font-weight: 800; margin-bottom: 15px; line-height: 1.2; }
         .hero p { font-size: 1.15em; margin-bottom: 25px; max-width: 750px; margin-left: auto; margin-right: auto; font-weight: 400; opacity: 0.9; }
@@ -91,13 +89,13 @@
         .client-logo-grid img { max-height: 35px; width: auto; margin: 0 auto; filter: grayscale(100%); opacity: 0.6; transition: all 0.3s; }
         .client-logo-grid img:hover { filter: grayscale(0%); opacity: 1; transform: scale(1.1); }
         
-        #problems { background-color: var(--light-bg-color); } .problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; } .problem-card { background: #fff; padding: 22px; border-radius: var(--border-radius); border: 1px solid var(--border-color); display: flex; align-items: flex-start; gap: 15px; transition: all 0.3s; } .problem-card:hover { transform: translateY(-5px); box-shadow: var(--box-shadow); border-color: var(--primary-color); } .problem-card svg { flex-shrink: 0; width: 24px; height: 24px; color: var(--accent-color); margin-top: 5px; }
-        #solution { background-color: #fff; } .solution-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; } .solution-card { background: var(--light-bg-color); padding: 22px; border-radius: var(--border-radius); border: 1px solid transparent; transition: all 0.3s; } .solution-card:hover { transform: translateY(-5px); box-shadow: var(--box-shadow); border-color: var(--primary-color); }
+        #problems { background-color: var(--light-bg-color); } .problem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; } .problem-card { background: #fff; padding: 22px; border-radius: var(--border-radius); border: 1px solid var(--border-color); display: flex; align-items: flex-start; gap: 15px; transition: all 0.3s; } .problem-card:hover { transform: translateY(-5px); box-shadow: var(--box-shadow); border-color: var(--primary-color); } .problem-card svg { flex-shrink: 0; width: 24px; height: 24px; color: var(--accent-color); margin-top: 5px; }
+        #solution { background-color: #fff; } .solution-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; } .solution-card { background: var(--light-bg-color); padding: 22px; border-radius: var(--border-radius); border: 1px solid transparent; transition: all 0.3s; } .solution-card:hover { transform: translateY(-5px); box-shadow: var(--box-shadow); border-color: var(--primary-color); }
         .solution-card-header { display: flex; align-items: center; gap: 15px; margin-bottom: 10px; }
         .solution-card-header .icon-wrapper { flex-shrink: 0; width: 45px; height: 45px; background: linear-gradient(145deg, var(--primary-color), #4e9aff); color: white; border-radius: 12px; display: flex; align-items: center; justify-content: center; } .solution-card-header svg { width: 22px; height: 22px; } .solution-card-header h3 { font-size: 1.15em; color: var(--secondary-color); margin: 0; } .solution-card p { margin: 0; }
         #features { background-color: var(--light-bg-color); } .feature-tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 30px; flex-wrap: wrap; } .tab-btn { padding: 10px 25px; font-size: 1em; font-weight: 700; border: 1px solid var(--border-color); background-color: #fff; color: var(--text-color); border-radius: 50px; cursor: pointer; transition: all 0.3s; } .tab-btn.active, .tab-btn:hover { background-color: var(--primary-color); color: #fff; border-color: var(--primary-color); transform: translateY(-2px); } .feature-content { display: none; } .feature-content.active { display: block; animation: fadeIn 0.5s; } @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } } .feature-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; list-style: none; padding: 0;} .feature-list li { display: flex; align-items: flex-start; gap: 10px; background-color: #fff; padding: 20px; border-radius: 12px; border: 1px solid var(--border-color); transition: all 0.3s ease; } .feature-list li:hover { transform: translateY(-5px); box-shadow: var(--box-shadow); } .feature-list svg { flex-shrink: 0; width: 22px; height: 22px; color: var(--primary-color); margin-top: 4px; }
-        #testimonials { background-color: #fff; } .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; } .testimonial-card { background: var(--light-bg-color); padding: 30px; border-radius: var(--border-radius); border: 1px solid var(--border-color); position: relative; transition: all 0.3s; } .testimonial-card:hover { transform: translateY(-5px); box-shadow: var(--box-shadow); } .testimonial-card .quote-icon { position: absolute; top: -15px; left: 20px; font-size: 4em; color: var(--primary-color); opacity: 0.1; } .testimonial-card .quote-text { font-size: 1em; font-style: italic; margin-bottom: 20px; } .testimonial-author { display: flex; align-items: center; gap: 15px; border-top: 1px solid var(--border-color); padding-top: 20px; } .testimonial-author img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; } .author-info h4 { margin: 0; font-size: 1em; color: var(--secondary-color); } .author-info p { margin: 0; font-size: 0.9em; color: #5f6368; }
-        #experts { background-color: var(--light-bg-color); } .experts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; } .expert-card { background: #fff; padding: 30px; border-radius: var(--border-radius); text-align: center; border: 1px solid var(--border-color); transition: all 0.3s; } .expert-card:hover { transform: translateY(-5px); box-shadow: var(--box-shadow); border-color: var(--primary-color); } .expert-card img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin: 0 auto 20px; border: 4px solid white; box-shadow: 0 0 15px rgba(0,0,0,0.1); } .expert-card h3 { font-size: 1.3em; color: var(--secondary-color); margin-bottom: 5px; } .expert-card .title { color: var(--primary-color); font-weight: 500; margin-bottom: 15px; }
+        #testimonials { background-color: #fff; } .testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; } .testimonial-card { background: var(--light-bg-color); padding: 30px; border-radius: var(--border-radius); border: 1px solid var(--border-color); position: relative; transition: all 0.3s; } .testimonial-card:hover { transform: translateY(-5px); box-shadow: var(--box-shadow); } .testimonial-card .quote-icon { position: absolute; top: -15px; left: 20px; font-size: 4em; color: var(--primary-color); opacity: 0.1; } .testimonial-card .quote-text { font-size: 1em; font-style: italic; margin-bottom: 20px; } .testimonial-author { display: flex; align-items: center; gap: 15px; border-top: 1px solid var(--border-color); padding-top: 20px; } .testimonial-author img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; } .author-info h4 { margin: 0; font-size: 1em; color: var(--secondary-color); } .author-info p { margin: 0; font-size: 0.9em; color: #5f6368; }
+        #experts { background-color: var(--light-bg-color); } .experts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; } .expert-card { background: #fff; padding: 30px; border-radius: var(--border-radius); text-align: center; border: 1px solid var(--border-color); transition: all 0.3s; } .expert-card:hover { transform: translateY(-5px); box-shadow: var(--box-shadow); border-color: var(--primary-color); } .expert-card img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin: 0 auto 20px; border: 4px solid white; box-shadow: 0 0 15px rgba(0,0,0,0.1); } .expert-card h3 { font-size: 1.3em; color: var(--secondary-color); margin-bottom: 5px; } .expert-card .title { color: var(--primary-color); font-weight: 500; margin-bottom: 15px; }
         
         #pricing { background-color: #fff; }
         .pricing-tabs { display: none; }
@@ -150,13 +148,48 @@
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(13, 27, 42, 0.7); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); display: flex; align-items: center; justify-content: center; z-index: 1001; opacity: 0; visibility: hidden; transition: opacity 0.4s, visibility 0.4s; } .modal-overlay.active { opacity: 1; visibility: visible; } .modal-content { background: #fff; padding: 40px; border-radius: var(--border-radius); width: 90%; max-width: 500px; position: relative; transform: translateY(-20px) scale(0.95); transition: transform 0.4s; } .modal-overlay.active .modal-content { transform: translateY(0) scale(1); } .modal-close { position: absolute; top: 15px; right: 15px; font-size: 2em; font-weight: bold; color: #aaa; cursor: pointer; line-height: 1; border: none; background: none; } .modal-close:hover { color: #333; } .modal-content h3 { text-align: center; font-size: 1.8em; color: var(--secondary-color); margin-bottom: 25px; } .form-group { margin-bottom: 20px; } .form-group label { display: block; font-weight: 500; margin-bottom: 8px; color: #5f6368; } .form-group input, .form-group textarea { width: 100%; padding: 12px 15px; border-radius: 8px; border: 1px solid var(--border-color); font-size: 1em; font-family: 'Be Vietnam Pro', sans-serif; transition: border-color 0.3s, box-shadow 0.3s; box-sizing: border-box; } .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--primary-color); box-shadow: 0 0 0 3px rgba(10, 104, 255, 0.2); } #form-message { color: #16a34a; text-align: center; margin-top:15px; display: none; }
         
         /* === START: CSS TỐI ƯU CHO MOBILE === */
+        
+        /* Mobile slider wrapper */
+        .mobile-slider-wrapper {
+            position: relative;
+            display: none; /* Hide on desktop by default */
+        }
+        .mobile-slider-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            z-index: 10;
+        }
+        .mobile-slider-nav button {
+            background-color: rgba(0,0,0,0.3);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .mobile-slider-nav button:hover {
+            background-color: rgba(0,0,0,0.6);
+        }
+        .mobile-slider-nav .prev-btn { margin-left: -15px; }
+        .mobile-slider-nav .next-btn { margin-right: -15px; }
+
+
         @media (max-width: 991px) {
+            /* 1. Mobile Menu */
             .nav-toggle {
                 display: block;
                 cursor: pointer;
                 color: var(--secondary-color);
                 z-index: 1001;
                 font-size: 1.5rem;
+                border: none; background: none; padding: 5px;
             }
             .nav-links {
                 position: fixed;
@@ -164,7 +197,7 @@
                 right: -100%;
                 width: 70%;
                 max-width: 320px;
-                height: 100%;
+                height: 100vh;
                 background-color: #fff;
                 flex-direction: column;
                 justify-content: center;
@@ -174,13 +207,15 @@
                 box-shadow: -5px 0 15px rgba(13, 27, 42, 0.1);
                 transition: right 0.4s ease-in-out;
                 z-index: 1000;
-                display: flex; 
             }
             .nav-links.show-menu {
                 right: 0;
             }
-            .nav-links a {
-                font-size: 1.1rem;
+            .nav-links a { font-size: 1.1rem; }
+
+            /* 2. Grid 2 cột */
+            .problem-grid, .solution-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
         
@@ -188,6 +223,17 @@
             .section-title, #cta-section h2 { font-size: 2.2em; } 
             .hero h1 { font-size: 2.5em; } 
             .hero p { font-size: 1.1em; }
+
+            /* 4. Tab Tính năng */
+            .feature-tabs {
+                gap: 8px;
+            }
+            .tab-btn {
+                padding: 8px 16px;
+                font-size: 0.9em;
+            }
+
+            /* 6. Gói giải pháp */
             .pricing-tabs { display: flex; justify-content: center; gap: 5px; margin-bottom: 25px; background-color: var(--light-bg-color); border-radius: 50px; padding: 5px; }
             .pricing-tab-btn { flex: 1; padding: 10px 15px; font-size: 0.9em; font-weight: 700; border: none; background-color: transparent; color: var(--text-color); border-radius: 50px; cursor: pointer; transition: all 0.3s; }
             .pricing-tab-btn.active { background-color: var(--primary-color); color: #fff; box-shadow: 0 4px 10px rgba(10,104,255,0.3); }
@@ -196,38 +242,32 @@
             .pricing-card.active { display: flex; animation: fadeIn 0.5s; }
             .pricing-card.recommended { transform: none; }
             
-            /* 2 & 3. Thách thức, Giải pháp, Tính năng: 2 cột */
-            .problem-grid, .solution-grid, .feature-list {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-            }
-            .problem-card, .solution-card, .feature-list li { padding: 15px; }
-            .problem-card h4, .solution-card h3 { font-size: 1em; }
-            .problem-card p, .solution-card p, .feature-list li { font-size: 0.9em; }
-            
-            /* 4 & 5. Testimonial & Expert sliders */
+            /* 3. Slider cho Khách hàng & Chuyên gia */
             .testimonial-grid, .experts-grid {
-                display: flex;
-                overflow-x: auto;
-                scroll-snap-type: x mandatory;
-                -webkit-overflow-scrolling: touch;
-                gap: 20px;
-                padding-bottom: 15px;
+                display: flex; /* Thay đổi từ grid sang flex cho slider */
+                transition: transform 0.5s ease-in-out;
             }
-            .testimonial-grid::-webkit-scrollbar, .experts-grid::-webkit-scrollbar { display: none; }
             .testimonial-card, .expert-card {
                 flex: 0 0 90%;
-                scroll-snap-align: center;
-                transform: none !important;
+                margin-right: 20px;
             }
-            .expert-card { max-width: 280px; }
+            .mobile-slider-wrapper {
+                display: block; /* Hiển thị wrapper trên mobile */
+                overflow: hidden; /* Ẩn các slide bên ngoài */
+            }
+            .desktop-grid {
+                display: none; /* Ẩn grid desktop trên mobile */
+            }
         }
 
-        @media (max-width: 500px) {
-             /* Fallback to 1 column on very small screens */
+        @media (max-width: 576px) {
+             /* Chuyển về 1 cột trên điện thoại nhỏ */
             .problem-grid, .solution-grid, .feature-list {
                 grid-template-columns: 1fr;
             }
+             .testimonial-card, .expert-card {
+                flex: 0 0 100%; /* Mỗi slide chiếm toàn bộ chiều rộng */
+             }
         }
         /* === END: CSS TỐI ƯU CHO MOBILE === */
     </style>
@@ -238,7 +278,7 @@
             <a href="#hero" class="nav-logo"> 
                 <img src="https://gpems.net/logo-icon.png" alt="GPEMS Logo"> <span>Innoflex</span> 
             </a> 
-            <ul class="nav-links"> 
+            <ul class="nav-links" id="nav-links"> 
                 <li><a href="#hero">Giới thiệu</a></li>
                 <li><a href="#problems">Thách thức</a></li>
                 <li><a href="#solution">Giải pháp</a></li> 
@@ -249,10 +289,9 @@
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="#footer-contact">Liên hệ</a></li> 
             </ul>
-            <!-- Nút Hamburger Menu -->
-            <div class="nav-toggle" id="nav-toggle">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M3 4H21V6H3V4ZM3 11H21V13H3V11ZM3 18H21V20H3V18Z"></path></svg>
-            </div>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Mở menu">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M3 4H21V6H3V4ZM3 11H21V13H3V11ZM3 18H21V20H3V18Z"></path></svg>
+            </button>
         </div> 
     </nav>
 
@@ -268,21 +307,52 @@
         <section id="features"> <div class="container"> <h2 class="section-title fade-in">Tính năng & Giao diện Innoflex</h2> <div class="feature-tabs fade-in"> <button class="tab-btn active" data-tab="tab-1">Bán hàng & Marketing</button> <button class="tab-btn" data-tab="tab-2">Kho & Vận hành</button> <button class="tab-btn" data-tab="tab-3">Tài chính & Kế toán</button> </div> <div id="tab-1" class="feature-content active fade-in"> <ul class="feature-list"> <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M4.5 4.5a3 3 0 0 0-3 3v9a3 3 0 0 0 3 3h8.25a3 3 0 0 0 3-3v-9a3 3 0 0 0-3-3H4.5ZM19.94 18.75l-2.69-2.69V7.94l2.69-2.69c.944-.945 2.56-.276 2.56 1.06v11.38c0 1.336-1.616 2.005-2.56 1.06Z" /></svg>Quản Lý Fanpage Social & Livestream</li> <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M9 4.5a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V5.25A.75.75 0 0 1 9 4.5Zm6 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V5.25A.75.75 0 0 1 15 4.5ZM6.75 9.75a.75.75 0 0 1 .75-.75h9a.75.75 0 0 1 0 1.5h-9a.75.75 0 0 1-.75-.75ZM2.25 9.75A.75.75 0 0 0 3 9h.75a.75.75 0 0 0 0-1.5H3a.75.75 0 0 0-.75.75ZM20.25 9.75a.75.75 0 0 0 .75-.75v-.75a.75.75 0 0 0-1.5 0v.75c0 .414.336.75.75.75ZM6.31 15.243a.75.75 0 0 1 1.05-.14l2.126 1.228a.75.75 0 0 0 .73-.017l4.38-2.529a.75.75 0 0 1 1.05.141l2.33 2.68a.75.75 0 1 1-1.156.998l-2.006-2.302-3.68 2.124a.75.75 0 0 1-.73.017L8.214 18.4a.75.75 0 0 0-.73.017l-3.68 2.124-2.006-2.302a.75.75 0 1 1 1.156-.998l2.33 2.68ZM18 12.75a.75.75 0 0 1 .75-.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd" /></svg>Quản Lý Chiến Dịch, Combo, Sản Phẩm</li> <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M5.25 2.25a3 3 0 0 0-3 3v4.318a3 3 0 0 0 .879 2.121l9.58 9.581c.92.92 2.39 1.186 3.548.82A3 3 0 0 0 21 16.318V5.25a3 3 0 0 0-3-3H5.25Zm1.5 6a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" clip-rule="evenodd" /></svg>Quản Lý Khuyến Mãi & Chương Trình</li> <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 5.424-4.271l1.437-1.729a1.5 1.5 0 0 0 .329-1.013l-.007-.063l-.013-.092a.75.75 0 0 0-.715-.664l-.096-.008h-2.508l-5.01-5.01L10.5 2.25a.75.75 0 0 0-1.5 0v3.834L7.423 7.65c-.01.01-.02.019-.03.028l-3.32 3.32a.75.75 0 0 0 1.06 1.06l2.122-2.122a1.5 1.5 0 0 1 2.12 0l2.122 2.122a.75.75 0 0 0 1.061-1.06l-2.122-2.122a3 3 0 0 1-4.242 0L2.25 9.75a.75.75 0 0 0-1.06 1.06l3.32 3.32a3 3 0 0 0 4.243 0l5.88-5.879a.75.75 0 0 1 1.06 1.06l-5.88 5.88a1.5 1.5 0 0 0-2.12 0l-2.122-2.121a.75.75 0 0 0-1.06 1.061l2.122 2.122a3 3 0 0 0 4.242 0l2.36-2.359a1.875 1.875 0 0 1 2.652 0l2.359 2.36a1.5 1.5 0 0 0 2.122 0l1.73-1.729a19.467 19.467 0 0 0 4.204-5.35Z" clip-rule="evenodd" /></svg>Tích Hợp API Giao hàng, Sàn TMĐT</li> </ul> </div> <div id="tab-2" class="feature-content fade-in"> <ul class="feature-list"> <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M7.502 6.422a.75.75 0 0 1 .146.932l-4.25 7.5a.75.75 0 0 1-1.298-.734l4.25-7.5a.75.75 0 0 1 1.152-.198ZM10.5 3a.75.75 0 0 1 .75.75v16.5a.75.75 0 0 1-1.5 0V3.75a.75.75 0 0 1 .75-.75Zm3.854 4.146a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 1 1-1.06-1.06l7.5-7.5a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" /></svg>Quản Lý Tồn Kho (Đa kho, đa vị trí)</li> <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z" clip-rule="evenodd" /></svg>Tự Động Đóng Gói, Cắt Đơn, Quét Đơn</li> <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M15.97 2.47a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H3.75a.75.75 0 0 1 0-1.5h15.44l-3.22-3.22a.75.75 0 0 1 0-1.06Zm-8.03 16.03a.75.75 0 0 1 0-1.06L11.16 14H3.75a.75.75 0 0 1 0-1.5h7.41l-3.22-3.22a.75.75 0 0 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06 0Z" clip-rule="evenodd" /></svg>Xử lý Quy trình Hoàn hàng Full</li> <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z" clip-rule="evenodd" /></svg>Quản lý Khách hàng (đa kênh, đại lý, lẻ)</li> </ul> </div> <div id="tab-3" class="feature-content fade-in"> <ul class="feature-list"> <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M11.25 4.533A9.707 9.707 0 0 0 6 3a9.735 9.735 0 0 0-3.25.555.75.75 0 0 0-.5.707v14.25a.75.75 0 0 0 1 .707A9.735 9.735 0 0 0 6 21a9.707 9.707 0 0 0 5.25-1.533.75.75 0 0 0 0-1.329A8.23 8.23 0 0 1 6 18a8.23 8.23 0 0 1 5.25-7.135.75.75 0 0 0 0-1.329ZM18.75 3a9.735 9.735 0 0 0-3.25.555.75.75 0 0 0-.5.707v14.25a.75.75 0 0 0 1 .707A9.735 9.735 0 0 0 18 21a9.707 9.707 0 0 0 5.25-1.533.75.75 0 0 0 0-1.329A8.23 8.23 0 0 1 18 18a8.23 8.23 0 0 1 5.25-7.135.75.75 0 0 0 0-1.329A9.707 9.707 0 0 0 18 3Z" /></svg>Cấu Trúc Kế toán & Quản trị (2 sổ liên kết)</li> <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M2.25 2.25a.75.75 0 0 0 0 1.5H3v10.5a3 3 0 0 0 3 3h1.21l-2.12 2.12a.75.75 0 0 0 1.06 1.06l3.25-3.25a.75.75 0 0 0 0-1.06l-3.25-3.25a.75.75 0 1 0-1.06 1.06l2.12 2.12H6a1.5 1.5 0 0 1-1.5-1.5V3.75h1.5a.75.75 0 0 0 0-1.5H2.25ZM21.75 9.75a.75.75 0 0 0-1.5 0V18a1.5 1.5 0 0 1-1.5 1.5h-5.21l2.12-2.12a.75.75 0 0 0-1.06-1.06l-3.25 3.25a.75.75 0 0 0 0 1.06l3.25 3.25a.75.75 0 1 0 1.06-1.06L15 19.5h3.75a3 3 0 0 0 3-3V9.75Z" /></svg>Quản Trị Dòng tiền (Phải thu, phải trả)</li> <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M18 1.5a2.25 2.25 0 0 1 2.25 2.25v16.5a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V3.75A2.25 2.25 0 0 1 6 1.5h12ZM12 6a.75.75 0 0 1 .75.75v.008l.006.004.018.012a4.965 4.965 0 0 1 2.052 1.342.75.75 0 1 1-1.06 1.061A3.483 3.483 0 0 0 12.75 8.25v.009l-.006-.004-.018-.012a4.965 4.965 0 0 0-2.052-1.342.75.75 0 1 1 .53-1.414A3.483 3.483 0 0 1 12 6.75Zm-1.57 5.163a.75.75 0 1 0-1.06 1.061 3.483 3.483 0 0 0 1.986 1.986.75.75 0 1 0 1.06-1.06 4.98 4.98 0 0 1-1.986-1.986Zm3.14 0a.75.75 0 1 1 1.06 1.061 3.483 3.483 0 0 0-1.986 1.986.75.75 0 1 1-1.06-1.06 4.98 4.98 0 0 1 1.986-1.986Z" clip-rule="evenodd" /></svg>Phân tích Doanh thu & Lợi nhuận</li> <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM9 7.5a.75.75 0 0 0 0 1.5h3.75a.75.75 0 0 0 0-1.5H9ZM8.25 12a.75.75 0 0 1 .75-.75h6a.75.75 0 0 1 0 1.5h-6a.75.75 0 0 1-.75-.75Zm-1.5 3a.75.75 0 0 0 0 1.5h9a.75.75 0 0 0 0-1.5h-9Z" clip-rule="evenodd" /></svg>Quản lý Mua hàng (từ yêu cầu đến thanh toán)</li> </ul> </div>
             <div id="slider-container" class="fade-in"> <div class="slider-wrapper"> <div class="slide"><img src="https://www.geckoboard.com/uploads/Ecommerce-KPI-dashboard.png" alt="Giao diện Dashboard tổng quan" loading="lazy"><div class="slide-caption"><h4>Dashboard Real-time</h4><p>Nắm bắt toàn bộ "sức khỏe" doanh nghiệp trên một màn hình duy nhất.</p></div></div><div class="slide"><img src="https://images.ctfassets.net/dfcvkz6j859j/2r8wSI1BTI0LE4SeHLvGIw/63777a67fadcdaa6581f3c47434c2ad2/Ecommerce-Dashboard-Template-Example.png" alt="Giao diện quản lý đơn hàng đa kênh" loading="lazy"><div class="slide-caption"><h4>Phân tích Doanh thu & Lợi nhuận</h4><p>Theo dõi hiệu suất từng kênh bán, từng sản phẩm để ra quyết định kinh doanh chính xác.</p></div></div><div class="slide"><img src="https://fulfillrite.com/wp-content/uploads/How-Ecommerce-Order-Fulfillment-Works-in-11-Steps.png" alt="Giao diện quản lý tồn kho" loading="lazy"><div class="slide-caption"><h4>Chuẩn hóa Quy trình Vận hành</h4><p>Tự động hóa toàn bộ luồng xử lý đơn hàng, từ lúc nhận đơn đến khi giao thành công.</p></div></div></div><div class="slider-nav"> <button id="prevBtn"><</button> <button id="nextBtn">></button> </div><div class="slider-dots"></div> </div>
         </div> </section>
-        <section id="testimonials"> <div class="container"> <h2 class="section-title fade-in">Câu chuyện Thành công từ Khách hàng</h2> <div class="testimonial-grid fade-in"> <div class="testimonial-card"> <div class="quote-icon">“</div> <p class="quote-text">Innoflex đã giúp chúng tôi giảm 50% thời gian xử lý đơn hàng. Tồn kho giờ đây luôn chính xác theo thời gian thực, không còn tình trạng hủy đơn do hết hàng đột xuất.</p> <div class="testimonial-author"> <img src="https://i.pravatar.cc/150?img=1" alt="Avatar khách hàng An" loading="lazy"> <div class="author-info"><h4>Anh Trần Văn An</h4><p>CEO, Vua Giày Sneaker</p> </div> </div> </div> <div class="testimonial-card"> <div class="quote-icon">“</div> <p class="quote-text">Điều tôi tâm đắc nhất là dashboard báo cáo. Mỗi sáng, chỉ cần 5 phút trên điện thoại là nắm được toàn bộ tình hình kinh doanh, thay vì chờ đợi các file Excel như trước đây.</p> <div class="testimonial-author"> <img src="https://i.pravatar.cc/150?img=5" alt="Avatar khách hàng Hà" loading="lazy"> <div class="author-info"><h4>Chị Lê Thu Hà</h4><p>Trưởng phòng Vận hành, Mỹ phẩm Hali</p> </div> </div> </div> <div class="testimonial-card"> <div class="quote-icon">“</div> <p class="quote-text">Khả năng tự động hóa quy trình hoàn hàng và đối soát công nợ đã giải phóng đội ngũ kế toán. Chúng tôi giờ có thể tập trung vào việc phân tích và tối ưu chi phí.</p> <div class="testimonial-author"> <img src="https://i.pravatar.cc/150?img=8" alt="Avatar khách hàng Đức" loading="lazy"> <div class="author-info"><h4>Anh Phạm Minh Đức</h4><p>Chủ cửa hàng, Phụ kiện TechGo</p> </div> </div> </div> </div> </div> </section>
         
-        <section id="experts"> <div class="container"> <h2 class="section-title fade-in">Đội ngũ Chuyên gia luôn đồng hành</h2> <p class="section-subtitle fade-in">Chúng tôi không chỉ cung cấp phần mềm, chúng tôi cung cấp kinh nghiệm và sự tư vấn để đảm bảo bạn thành công.</p> <div class="experts-grid fade-in"> <div class="expert-card"> <img src="https://admin.gpems.net/storage/uploads/courses/lecturers/dwDwZCThmWPgEM0kDi8XnYWkuLke9k-metaNzI0MjU1MTcwMTY2NzAzMTA4MC5wbmc%3D-.png" alt="Chân dung Nguyễn Tấn Hiền" loading="lazy"> <h3>Nguyễn Tấn Hiền</h3> <p class="title">Founder & CEO</p> </div> <div class="expert-card"> <img src="https://admin.gpems.net/storage/uploads/courses/lecturers/mlXRjIPyPsdcucphnW5fNbCrq9IRoH-metaMTkwMjE3NjgyNzE2NzE1MzM0MzAuanBn-.jpg" alt="Chân dung Nguyễn Văn Hòa" loading="lazy"> <h3>Nguyễn Văn Hòa</h3> <p class="title">Co-Founder & CTO</p> </div> <div class="expert-card"> <img src="https://i.pravatar.cc/150?img=60" alt="Chân dung Nguyễn Mạnh Tân" loading="lazy"> <h3>Nguyễn Mạnh Tân</h3> <p class="title">Co-Founder & COO</p> </div> </div> </div> </section>
+        <section id="testimonials"> 
+            <div class="container"> 
+                <h2 class="section-title fade-in">Câu chuyện Thành công từ Khách hàng</h2>
+                <!-- Desktop View -->
+                <div class="testimonial-grid desktop-grid fade-in"> <div class="testimonial-card"> <div class="quote-icon">“</div> <p class="quote-text">Innoflex đã giúp chúng tôi giảm 50% thời gian xử lý đơn hàng. Tồn kho giờ đây luôn chính xác theo thời gian thực, không còn tình trạng hủy đơn do hết hàng đột xuất.</p> <div class="testimonial-author"> <img src="https://i.pravatar.cc/150?img=1" alt="Avatar khách hàng An" loading="lazy"> <div class="author-info"><h4>Anh Trần Văn An</h4><p>CEO, Vua Giày Sneaker</p> </div> </div> </div> <div class="testimonial-card"> <div class="quote-icon">“</div> <p class="quote-text">Điều tôi tâm đắc nhất là dashboard báo cáo. Mỗi sáng, chỉ cần 5 phút trên điện thoại là nắm được toàn bộ tình hình kinh doanh, thay vì chờ đợi các file Excel như trước đây.</p> <div class="testimonial-author"> <img src="https://i.pravatar.cc/150?img=5" alt="Avatar khách hàng Hà" loading="lazy"> <div class="author-info"><h4>Chị Lê Thu Hà</h4><p>Trưởng phòng Vận hành, Mỹ phẩm Hali</p> </div> </div> </div> <div class="testimonial-card"> <div class="quote-icon">“</div> <p class="quote-text">Khả năng tự động hóa quy trình hoàn hàng và đối soát công nợ đã giải phóng đội ngũ kế toán. Chúng tôi giờ có thể tập trung vào việc phân tích và tối ưu chi phí.</p> <div class="testimonial-author"> <img src="https://i.pravatar.cc/150?img=8" alt="Avatar khách hàng Đức" loading="lazy"> <div class="author-info"><h4>Anh Phạm Minh Đức</h4><p>Chủ cửa hàng, Phụ kiện TechGo</p> </div> </div> </div> </div>
+                <!-- Mobile Slider -->
+                <div class="mobile-slider-wrapper fade-in" data-slider="testimonials">
+                    <div class="testimonial-grid">
+                        <div class="testimonial-card"> <div class="quote-icon">“</div> <p class="quote-text">Innoflex đã giúp chúng tôi giảm 50% thời gian xử lý đơn hàng. Tồn kho giờ đây luôn chính xác theo thời gian thực, không còn tình trạng hủy đơn do hết hàng đột xuất.</p> <div class="testimonial-author"> <img src="https://i.pravatar.cc/150?img=1" alt="Avatar khách hàng An" loading="lazy"> <div class="author-info"><h4>Anh Trần Văn An</h4><p>CEO, Vua Giày Sneaker</p> </div> </div> </div> <div class="testimonial-card"> <div class="quote-icon">“</div> <p class="quote-text">Điều tôi tâm đắc nhất là dashboard báo cáo. Mỗi sáng, chỉ cần 5 phút trên điện thoại là nắm được toàn bộ tình hình kinh doanh, thay vì chờ đợi các file Excel như trước đây.</p> <div class="testimonial-author"> <img src="https://i.pravatar.cc/150?img=5" alt="Avatar khách hàng Hà" loading="lazy"> <div class="author-info"><h4>Chị Lê Thu Hà</h4><p>Trưởng phòng Vận hành, Mỹ phẩm Hali</p> </div> </div> </div> <div class="testimonial-card"> <div class="quote-icon">“</div> <p class="quote-text">Khả năng tự động hóa quy trình hoàn hàng và đối soát công nợ đã giải phóng đội ngũ kế toán. Chúng tôi giờ có thể tập trung vào việc phân tích và tối ưu chi phí.</p> <div class="testimonial-author"> <img src="https://i.pravatar.cc/150?img=8" alt="Avatar khách hàng Đức" loading="lazy"> <div class="author-info"><h4>Anh Phạm Minh Đức</h4><p>Chủ cửa hàng, Phụ kiện TechGo</p> </div> </div> </div>
+                    </div>
+                    <div class="mobile-slider-nav">
+                        <button class="prev-btn" aria-label="Slide trước"><</button>
+                        <button class="next-btn" aria-label="Slide sau">></button>
+                    </div>
+                </div>
+            </div> 
+        </section>
+        
+        <section id="experts"> 
+            <div class="container"> 
+                <h2 class="section-title fade-in">Đội ngũ Chuyên gia luôn đồng hành</h2> <p class="section-subtitle fade-in">Chúng tôi không chỉ cung cấp phần mềm, chúng tôi cung cấp kinh nghiệm và sự tư vấn để đảm bảo bạn thành công.</p>
+                <!-- Desktop View -->
+                <div class="experts-grid desktop-grid fade-in"> <div class="expert-card"> <img src="https://admin.gpems.net/storage/uploads/courses/lecturers/dwDwZCThmWPgEM0kDi8XnYWkuLke9k-metaNzI0MjU1MTcwMTY2NzAzMTA4MC5wbmc%3D-.png" alt="Chân dung Nguyễn Tấn Hiền" loading="lazy"> <h3>Nguyễn Tấn Hiền</h3> <p class="title">Founder & CEO</p> </div> <div class="expert-card"> <img src="https://admin.gpems.net/storage/uploads/courses/lecturers/mlXRjIPyPsdcucphnW5fNbCrq9IRoH-metaMTkwMjE3NjgyNzE2NzE1MzM0MzAuanBn-.jpg" alt="Chân dung Nguyễn Văn Hòa" loading="lazy"> <h3>Nguyễn Văn Hòa</h3> <p class="title">Co-Founder & CTO</p> </div> <div class="expert-card"> <img src="https://i.pravatar.cc/150?img=60" alt="Chân dung Nguyễn Mạnh Tân" loading="lazy"> <h3>Nguyễn Mạnh Tân</h3> <p class="title">Co-Founder & COO</p> </div> </div>
+                <!-- Mobile Slider -->
+                <div class="mobile-slider-wrapper fade-in" data-slider="experts">
+                     <div class="experts-grid">
+                         <div class="expert-card"> <img src="https://admin.gpems.net/storage/uploads/courses/lecturers/dwDwZCThmWPgEM0kDi8XnYWkuLke9k-metaNzI0MjU1MTcwMTY2NzAzMTA4MC5wbmc%3D-.png" alt="Chân dung Nguyễn Tấn Hiền" loading="lazy"> <h3>Nguyễn Tấn Hiền</h3> <p class="title">Founder & CEO</p> </div> <div class="expert-card"> <img src="https://admin.gpems.net/storage/uploads/courses/lecturers/mlXRjIPyPsdcucphnW5fNbCrq9IRoH-metaMTkwMjE3NjgyNzE2NzE1MzM0MzAuanBn-.jpg" alt="Chân dung Nguyễn Văn Hòa" loading="lazy"> <h3>Nguyễn Văn Hòa</h3> <p class="title">Co-Founder & CTO</p> </div> <div class="expert-card"> <img src="https://i.pravatar.cc/150?img=60" alt="Chân dung Nguyễn Mạnh Tân" loading="lazy"> <h3>Nguyễn Mạnh Tân</h3> <p class="title">Co-Founder & COO</p> </div>
+                     </div>
+                     <div class="mobile-slider-nav">
+                        <button class="prev-btn" aria-label="Slide trước"><</button>
+                        <button class="next-btn" aria-label="Slide sau">></button>
+                    </div>
+                </div>
+            </div> 
+        </section>
 
         <section id="pricing">
             <div class="container">
                 <h2 class="section-title fade-in">Gói giải pháp Linh hoạt & Hiệu quả</h2>
                 <p class="section-subtitle fade-in">Lựa chọn gói giải pháp phù hợp với quy mô và giai đoạn phát triển của doanh nghiệp bạn.</p>
-
                 <div class="pricing-tabs fade-in">
                     <button class="pricing-tab-btn active" data-tab="price-free">Free</button>
                     <button class="pricing-tab-btn" data-tab="price-pro">Pro</button>
                     <button class="pricing-tab-btn" data-tab="price-enterprise">Enterprise</button>
                 </div>
-
                 <div class="pricing-grid fade-in">
                     <div class="pricing-card active" data-tab="price-free">
                         <h3>Free</h3>
@@ -472,7 +542,7 @@
             const sections = document.querySelectorAll("main section[id], header[id]");
             const navLinks = document.querySelectorAll(".nav-links a");
             const sectionObserver = new IntersectionObserver((entries) => {
-                let currentActiveId = '';
+                let currentActiveId = 'hero';
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) { currentActiveId = entry.target.getAttribute("id"); }
                 });
@@ -480,26 +550,29 @@
                     link.classList.remove("active-link");
                     if (link.getAttribute("href") === `#${currentActiveId}`) { link.classList.add("active-link"); }
                 });
-                if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) {
+                 if (window.innerHeight + Math.round(window.scrollY) >= document.body.offsetHeight - 50) {
                     navLinks.forEach(link => link.classList.remove('active-link'));
                     document.querySelector('a[href="#footer-contact"]')?.classList.add('active-link');
                 }
             }, { rootMargin: "-40% 0px -60% 0px" });
             sections.forEach((section) => sectionObserver.observe(section));
 
-            // Image Slider
-            const sliderWrapper = document.querySelector('.slider-wrapper');
-            if(sliderWrapper) {
-                const slides = document.querySelectorAll('.slide'), prevBtn = document.getElementById('prevBtn'), nextBtn = document.getElementById('nextBtn'), dotsContainer = document.querySelector('.slider-dots');
-                let currentIndex = 0; const totalSlides = slides.length;
-                if(totalSlides > 0){
-                    slides.forEach((_, i) => { const dot = document.createElement('div'); dot.classList.add('dot'); dot.addEventListener('click', () => goToSlide(i)); dotsContainer.appendChild(dot); });
-                    const dots = document.querySelectorAll('.dot');
-                    function updateSlider() { sliderWrapper.style.transform = `translateX(-${currentIndex * 100}%)`; dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex)); }
-                    function goToSlide(index) { currentIndex = index; updateSlider(); }
-                    nextBtn.addEventListener('click', () => { currentIndex = (currentIndex + 1) % totalSlides; updateSlider(); });
-                    prevBtn.addEventListener('click', () => { currentIndex = (currentIndex - 1 + totalSlides) % totalSlides; updateSlider(); });
-                    updateSlider(); setInterval(() => { nextBtn.click(); }, 5000);
+            // Desktop Image Slider
+            const sliderContainer = document.querySelector('#slider-container');
+            if (sliderContainer) {
+                const sliderWrapper = sliderContainer.querySelector('.slider-wrapper');
+                if(sliderWrapper) {
+                    const slides = sliderContainer.querySelectorAll('.slide'), prevBtn = document.getElementById('prevBtn'), nextBtn = document.getElementById('nextBtn'), dotsContainer = sliderContainer.querySelector('.slider-dots');
+                    let currentIndex = 0; const totalSlides = slides.length;
+                    if(totalSlides > 0){
+                        slides.forEach((_, i) => { const dot = document.createElement('div'); dot.classList.add('dot'); dot.addEventListener('click', () => goToSlide(i)); dotsContainer.appendChild(dot); });
+                        const dots = sliderContainer.querySelectorAll('.dot');
+                        function updateSlider() { sliderWrapper.style.transform = `translateX(-${currentIndex * 100}%)`; dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex)); }
+                        function goToSlide(index) { currentIndex = index; updateSlider(); }
+                        nextBtn.addEventListener('click', () => { currentIndex = (currentIndex + 1) % totalSlides; updateSlider(); });
+                        prevBtn.addEventListener('click', () => { currentIndex = (currentIndex - 1 + totalSlides) % totalSlides; updateSlider(); });
+                        updateSlider(); setInterval(() => { nextBtn.click(); }, 5000);
+                    }
                 }
             }
 
@@ -531,23 +604,83 @@
             // === START: JAVASCRIPT TỐI ƯU CHO MOBILE ===
             // 1. Mobile Menu Toggle
             const navToggle = document.getElementById('nav-toggle');
-            const navMenu = document.querySelector('.nav-links');
-            const navLinkItems = document.querySelectorAll('.nav-links a');
-
+            const navMenu = document.getElementById('nav-links');
             if (navToggle && navMenu) {
                 navToggle.addEventListener('click', () => {
                     navMenu.classList.toggle('show-menu');
+                    const isExpanded = navMenu.classList.contains('show-menu');
+                    navToggle.setAttribute('aria-expanded', isExpanded);
+                    navToggle.setAttribute('aria-label', isExpanded ? 'Đóng menu' : 'Mở menu');
+                });
+                navMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        navMenu.classList.remove('show-menu');
+                        navToggle.setAttribute('aria-expanded', 'false');
+                        navToggle.setAttribute('aria-label', 'Mở menu');
+                    });
                 });
             }
 
-            // Close menu when a link is clicked
-            navLinkItems.forEach(link => {
-                link.addEventListener('click', () => {
-                    if (navMenu.classList.contains('show-menu')) {
-                        navMenu.classList.remove('show-menu');
-                    }
+            // 3. Mobile Sliders with Buttons & Autoplay
+            const initMobileSlider = (sliderSelector) => {
+                const sliderWrapper = document.querySelector(`[data-slider="${sliderSelector}"]`);
+                if (!sliderWrapper) return;
+
+                const slider = sliderWrapper.querySelector('.testimonial-grid, .experts-grid');
+                const prevBtn = sliderWrapper.querySelector('.prev-btn');
+                const nextBtn = sliderWrapper.querySelector('.next-btn');
+                const items = slider.children;
+
+                if (items.length <= 1) return;
+
+                let currentIndex = 0;
+                let autoPlayInterval;
+
+                const goToSlide = (index) => {
+                    const itemWidth = items[0].offsetWidth;
+                    const gap = parseInt(window.getComputedStyle(slider).gap) || 20;
+                    const offset = index * (itemWidth + gap);
+                    slider.style.transform = `translateX(-${offset}px)`;
+                    currentIndex = index;
+                };
+
+                const next = () => {
+                    const newIndex = (currentIndex + 1) % items.length;
+                    goToSlide(newIndex);
+                };
+
+                const prev = () => {
+                    const newIndex = (currentIndex - 1 + items.length) % items.length;
+                    goToSlide(newIndex);
+                };
+                
+                const startAutoplay = () => {
+                    stopAutoplay();
+                    autoPlayInterval = setInterval(next, 4000);
+                };
+
+                const stopAutoplay = () => {
+                    clearInterval(autoPlayInterval);
+                };
+
+                nextBtn.addEventListener('click', () => {
+                    next();
+                    stopAutoplay();
                 });
-            });
+                prevBtn.addEventListener('click', () => {
+                    prev();
+                    stopAutoplay();
+                });
+                
+                // Start autoplay
+                startAutoplay();
+            };
+            
+            // Activate sliders only on mobile view
+            if (window.matchMedia("(max-width: 768px)").matches) {
+                initMobileSlider('testimonials');
+                initMobileSlider('experts');
+            }
             // === END: JAVASCRIPT TỐI ƯU CHO MOBILE ===
         });
     </script>
